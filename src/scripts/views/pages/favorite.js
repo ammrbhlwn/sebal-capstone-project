@@ -1,7 +1,7 @@
 import FavoriteProductIdb from '../../data/favorite-product-idb';
 import FavoriteProductSearchPresenter from './liked-products/favorite-product-search-presenter';
-import FavoriteProductSearchView from './liked-products/favorite-product-show-presenter';
 import FavoriteProductShowPresenter from './liked-products/favorite-product-show-presenter';
+import FavoriteProductSearchView from './liked-products/favorite-product-search-view';
 
 const view = new FavoriteProductSearchView();
 

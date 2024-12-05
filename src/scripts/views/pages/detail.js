@@ -24,7 +24,7 @@ const Detail = {
 
     LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      favoriteProduct: FavoriteProductIdb,
+      favoriteProducts: FavoriteProductIdb,
       product: {
         id: productDetailList.id,
         name: productDetailList.name,

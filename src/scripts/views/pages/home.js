@@ -1,4 +1,4 @@
-import ProductDbSource from '../../data/productdb-source';
+import ProductDbSource from '../../data/productdb-source.js';
 import {
   displayProducts,
   displayCategoryProducts,

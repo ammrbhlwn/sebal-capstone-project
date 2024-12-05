@@ -12,7 +12,7 @@ class FavoriteProductShowPresenter {
   }
 
   _displayProducts(products) {
-    this._view.showFavoriteProducts(products);
+    this._view._showFavoriteProducts(products);
   }
 }
 

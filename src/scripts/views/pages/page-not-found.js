@@ -3,7 +3,7 @@ const pageNotFound = (message) => {
     <div class="not-found">
         <h1 class="error-title">Ooops!</h1>
         <p class="error-detail">${message}</p>
-        <button onclick="location.href='#'">Back to homepage</button>
+        <button onclick="location.href=''">Back to homepage</button>
     </div>
   `;
 };
