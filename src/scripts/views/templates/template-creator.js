@@ -139,7 +139,7 @@ const createProductDetailTemplate = (product) => `
           }</p>
           <div class="cta-checkout">
             <p class="price">IDR 7,999,999</p> 
-            <button class="checkout" onClick="location.href='wa.me/62812345678'">🛒 Checkout</button>
+            <button class="checkout" onClick="location.href='https://wa.me/62812345678'">🛒 Checkout</button>
           </div>
         </div>
       </div>
