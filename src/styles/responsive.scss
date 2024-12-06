@@ -15,7 +15,7 @@
   }
 
   .detail-container {
-    padding: 10rem 2rem;
+    padding: 18rem 2rem;
   }
 
   .favorite-container,
@@ -26,6 +26,19 @@
   .detail-content {
     flex-direction: column;
     padding-inline: 3rem;
+  }
+
+  .cta-back {
+    padding-inline: 3rem;
+  }
+
+  .product_detail_picture {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    border-radius: 2rem;
   }
 }
 
@@ -109,6 +122,18 @@
   .price,
   .checkout {
     font-size: 2.5rem;
+  }
+
+  .strip-container {
+    right: 0;
+    overflow: hidden;
+    width: 60%;
+  }
+
+  .jumbotron-strip-container img {
+    padding: 0rem;
+    width: 300px;
+    object-fit: cover;
   }
 }
 

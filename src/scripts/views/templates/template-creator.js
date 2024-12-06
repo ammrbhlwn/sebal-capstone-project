@@ -57,7 +57,7 @@ const createProductListTemplate = (product) => `
       
       <div class="text-container">
         <h2 class="product_item_name">Phone</h2>
-        <p class="product_item_city">Iphone 16 Pro Max 16GB</p>
+        <p name="name" class="product_item_city">Iphone 16 Pro Max 16GB</p>
         <p class="product_item_detail">IDR 7,999,999</p>
       </div>
       <button class="product_item_detail-button" onclick="location.href='/#/detail/${product.id}'" aria-label="Lihat product">View Product</button>
@@ -89,7 +89,7 @@ const createTopStoreTemplate = (product) => `
       <div class="text-container">
         <h2 class="product_item_name">Phone</h2>
         <div class="city-rating">
-          <p class="product_item_city">Iphone 16 Pro Max 16GB</p>
+          <p name="name" class="product_item_city">Iphone 16 Pro Max 16GB</p>
         </div>
         <p class="product_item_detail">IDR 7,999,999</p>
       </div>
@@ -107,7 +107,7 @@ const createTopProductTemplate = (product) => `
       <div class="text-container">
         <h2 class="product_item_name">Phone</h2>
         <div class="city-rating">
-          <p class="product_item_city">Iphone 16 Pro Max 16GB</p>
+          <p name="name" class="product_item_city">Iphone 16 Pro Max 16GB</p>
         </div>
         <p class="product_item_detail">IDR 7,999,999</p>
       </div>
@@ -123,19 +123,13 @@ const createProductDetailTemplate = (product) => `
       <div class="detail-content">
         <div class="product_detail_picture" tabindex="0">
           <picture class="lazyload">
-            <source class="lazyload" media="(max-width: 600px)" srcset="${
-              CONFIG.BASE_IMAGE_URL + small + product.pictureId
-            }">
-            <img class="product_detail_picture lazyload" src="/images/placeholder.png" data-src="${
-              CONFIG.BASE_IMAGE_URL + medium + product.pictureId
-            }" alt="product ${product.name || '-'}">
+            <img class="product_item_picture lazyload" src="/images/placeholder.png" data-src="/images/hp.png"></img>
           </picture>
         </div>
         <div class="text-container" tabindex="0">
           <div class="city-rating">
             <div class="product_detail_category">Phone</div>
             <div class="liked-rating">
-              <div id="likeButtonContainer" class="like-button"></div>
               <p class="product_detail_rating">⭐️${product.rating || '-'}</p>
             </div>
           </div>
@@ -145,30 +139,39 @@ const createProductDetailTemplate = (product) => `
           }</p>
           <div class="cta-checkout">
             <p class="price">IDR 7,999,999</p> 
-            <button class="checkout" onClick="location.href=''">🛒 Checkout</button>
+            <button class="checkout" onClick="location.href='wa.me/62812345678'">🛒 Checkout</button>
           </div>
         </div>
       </div>
 `;
 
-const createLikeButtonTemplate = () => `
-  <button tabindex="0" aria-label="like this product" id="likeButton" class="like-button">
-  </button>
-`;
-
-const createLikedButtonTemplate = () => `
-  <button tabindex="0" aria-label="unlike this product" id="likeButton" class="liked-button">
-  </button>
+const createStoreListTemplate = (product) => `
+    <div class="store-item" tabindex="0">
+      <picture class="lazyload container-img">
+        <img class="store_item_picture lazyload" src="/images/placeholder.png" data-src="/images/hp.png"></img>
+      </picture>
+      
+      <div class="text-container">
+        <h2 class="store_item_name">Gadget Store</h2>
+        <div class="city-rating">
+          <p class="store_item_city">Surabaya</p>
+          <p class="store_item_rating">⭐️4.0</p>
+        </div>
+        <p class="store_item_detail">${product.description || '-'}</p>
+      </div>
+      <button class="store_item_detail-button" onclick="location.href='/#/detail/${
+        product.id
+      }'" aria-label="Lihat Toko">View Store</button>
+    </div>
 `;
 
 export {
   createSkeletonProductListTemplate,
   createCategoryProductTemplate,
+  createStoreListTemplate,
   createSkeletonProductDetailTemplate,
   createTopProductTemplate,
   createTopStoreTemplate,
   createProductListTemplate,
   createProductDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
 };

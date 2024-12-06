@@ -1,5 +1,6 @@
 import {
   createProductListTemplate,
+  createStoreListTemplate,
   createProductDetailTemplate,
   createTopProductTemplate,
   createTopStoreTemplate,
@@ -15,12 +16,26 @@ function filterProducts(products, searchText) {
 }
 
 function displayProducts(products, productList) {
+  const newRelease = products.slice(0, 10);
   if (products.length === 0) {
     productList.innerHTML =
       '<div class="product-not-found">Tidak ada produk.</div>';
   } else {
-    const productItems = products
+    const productItems = newRelease
       .map((product) => createProductListTemplate(product))
+      .join('');
+    productList.innerHTML = productItems;
+  }
+}
+
+function displayStores(products, productList) {
+  const newRelease = products.slice(0, 10);
+  if (products.length === 0) {
+    productList.innerHTML =
+      '<div class="product-not-found">Tidak ada produk.</div>';
+  } else {
+    const productItems = newRelease
+      .map((product) => createStoreListTemplate(product))
       .join('');
     productList.innerHTML = productItems;
   }
@@ -44,12 +59,13 @@ function displayTopProducts(products, productList) {
 }
 
 function displayTopStores(products, productList) {
+  const topStores = products.slice(0, 5);
   if (products.length === 0) {
     productList.innerHTML =
       '<div class="product-not-found">Tidak ada produk.</div>';
   } else {
-    const productItems = products
-      .map((product) => createTopStoreTemplate(product))
+    const productItems = topStores
+      .map((product) => createStoreListTemplate(product))
       .join('');
     productList.innerHTML = productItems;
   }
@@ -63,6 +79,7 @@ function displayDetailProducts(products, productList) {
 export {
   filterProducts,
   displayProducts,
+  displayStores,
   displayCategoryProducts,
   displayTopProducts,
   displayTopStores,
